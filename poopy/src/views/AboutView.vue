@@ -1,7 +1,6 @@
 <template>
   <div>
-    <input v-model="text" />
-    <p>{{ text }}</p>
+    <p>{{ amongus }}</p>
   </div>
 </template>
 
@@ -9,13 +8,8 @@
 export default {
   data() {
     return {
-      text: "",
+      amongus: "yes",
     };
-  },
-  methods: {
-    wowie() {
-      console.log("amongus");
-    },
   },
 };
 </script>

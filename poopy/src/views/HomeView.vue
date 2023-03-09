@@ -1,9 +1,21 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import PokemonTemplateVue from "../components/PokemonTemplate.vue";
+import TheWelcome from "../components/TheWelcome.vue";
+import PokemonTemplate from "../components/PokemonTemplate.vue";
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    {{ test }}
+  </div>
 </template>
+
+<script>
+export default {
+  component: {
+    test: PokemonTemplate,
+  },
+};
+</script>
+
+<style lang="scss" scoped></style>

@@ -1,9 +1,10 @@
 <script setup>
-import TestComponent from "../components/TestComponent.vue";
+import TestComponent from "./components/TestComponent.vue";
 </script>
 
 <template>
   <div class="about">
+    <p>test</p>
     <TestComponent>
       <template #title> Amongus </template>
       <template #img>

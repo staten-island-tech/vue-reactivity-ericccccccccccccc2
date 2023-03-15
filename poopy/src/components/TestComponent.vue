@@ -1,11 +1,8 @@
 <template>
-  <div>
-    <h3><slot name="title"></slot></h3>
-    <slot name="img"></slot>
-
-    <h4><slot name="price"></slot></h4>
-    <button>buy this item</button>
-  </div>
+  <h3><slot name="title"></slot></h3>
+  <slot name="img"></slot>
+  <h4><slot name="price"></slot></h4>
+  <button>buy this item</button>
 </template>
 
 <script>

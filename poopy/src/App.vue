@@ -3,15 +3,15 @@ import { RouterView } from "vue-router";
 </script>
 
 <template>
-  <div>
-    <div class="wrapper">
+  <div class="bigger_wrapper">
+    <div class="title">
       <h1>Hat Shop</h1>
     </div>
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">Store</RouterLink>
-        <RouterLink to="/about">items</RouterLink>
-        <RouterLink to="/amongus">asdfads</RouterLink>
+        <RouterLink to="/">About Us </RouterLink>
+        <RouterLink to="/about">Yes </RouterLink>
+        <RouterLink to="/amongus">asdfads </RouterLink>
       </nav>
     </div>
 
@@ -20,10 +20,16 @@ import { RouterView } from "vue-router";
 </template>
 
 <style lang="scss" scoped>
-div {
-  display: flex;
-  place-items: flex-start;
-  flex-wrap: wrap;
-  padding: 10px;
+.title {
+  text-align: center;
+}
+.wrapper {
+  text-align: center;
+  margin: 10px;
+}
+
+.bigger_wrapper {
+  height: 1080px;
+  width: 1920px;
 }
 </style>

@@ -2,7 +2,7 @@
   <h1>asdlkjfla</h1>
 </template>
 
-<script>
+<script lang="js">
 export default {};
 </script>
 

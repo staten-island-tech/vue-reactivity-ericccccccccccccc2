@@ -22,4 +22,9 @@ div {
   align-content: vertical;
   flex-wrap: wrap;
 }
+
+img {
+  height: 250px;
+  width: 200px;
+}
 </style>

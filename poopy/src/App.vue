@@ -9,9 +9,9 @@ import { RouterView } from "vue-router";
     </div>
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">About Us </RouterLink>
-        <RouterLink to="/about">Yes </RouterLink>
-        <RouterLink to="/amongus">asdfads </RouterLink>
+        <RouterLink to="/">About Us &nbsp</RouterLink>
+        <RouterLink to="/about">Shop &nbsp</RouterLink>
+        <RouterLink to="/amongus">Cart &nbsp</RouterLink>
       </nav>
     </div>
 
@@ -22,12 +22,16 @@ import { RouterView } from "vue-router";
 <style lang="scss" scoped>
 .title {
   text-align: center;
+  font-size: 50px;
 }
 .wrapper {
   text-align: center;
-  margin: 10px;
+  margin: 20px;
 }
 
+nav {
+  font-size: 20px;
+}
 .bigger_wrapper {
   height: 1080px;
   width: 1920px;

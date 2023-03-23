@@ -3,38 +3,33 @@ import { viewDepthKey } from "vue-router";
 import wowow from "../components/wowow.vue";
 import { ref, onMounted } from "vue";
 
-let hats = ref([
+const div = ref(null);
+
+const hats = ref([
   {
     name: "Amongus - 2bucks",
-    img: "https://1.bp.blogspot.com/-C4pbViQnphU/YEXEf-4fQ6I/AAAAAAAAYA8/8cfFY-lITvwcrvyZfgc7krR9A_vJY0IPACLcBGAsYHQ/s16000/AmongUs-Hat-Final.jpg",
+    img: `"https://1.bp.blogspot.com/-C4pbViQnphU/YEXEf-4fQ6I/AAAAAAAAYA8/8cfFY-lITvwcrvyZfgc7krR9A_vJY0IPACLcBGAsYHQ/s16000/AmongUs-Hat-Final.jpg"`,
   },
   {
     name: "Hats (plural)",
-    img: "https://wiki.teamfortress.com/w/images/thumb/f/f5/Towering_Pillar_of_Hats.png/250px-Towering_Pillar_of_Hats.png",
+    img: `https://wiki.teamfortress.com/w/images/thumb/f/f5/Towering_Pillar_of_Hats.png/250px-Towering_Pillar_of_Hats.png"`,
   },
 ]);
+
 function test() {
-  console.log(hats);
+  div.value.textcontent = "";
 }
-test();
+onMounted(() => {
+  test();
+});
 </script>
 
 <template>
-  <div ref="div">
+  <div v-for="hat in hats" id="susdiv1">
     <wowow>
-      <template #title> amongus</template>
+      <template #title>{{ hat.name }}</template>
       <template #img>
-        <img
-          src="https://1.bp.blogspot.com/-C4pbViQnphU/YEXEf-4fQ6I/AAAAAAAAYA8/8cfFY-lITvwcrvyZfgc7krR9A_vJY0IPACLcBGAsYHQ/s16000/AmongUs-Hat-Final.jpg"
-        />
-      </template>
-    </wowow>
-    <wowow>
-      <template #title> Hats (plural) </template>
-      <template #img>
-        <img
-          src="https://wiki.teamfortress.com/w/images/thumb/f/f5/Towering_Pillar_of_Hats.png/250px-Towering_Pillar_of_Hats.png"
-        />
+        {{ hat.img }}
       </template>
     </wowow>
   </div>

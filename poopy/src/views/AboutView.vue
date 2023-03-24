@@ -4,24 +4,22 @@ import wowow from "../components/wowow.vue";
 import { ref, onMounted } from "vue";
 
 const div = ref(null);
-
+let amongus = "wow";
 const hats = ref([
   {
     name: "Amongus - 2bucks",
-    img: `"https://1.bp.blogspot.com/-C4pbViQnphU/YEXEf-4fQ6I/AAAAAAAAYA8/8cfFY-lITvwcrvyZfgc7krR9A_vJY0IPACLcBGAsYHQ/s16000/AmongUs-Hat-Final.jpg"`,
+    img: `https://1.bp.blogspot.com/-C4pbViQnphU/YEXEf-4fQ6I/AAAAAAAAYA8/8cfFY-lITvwcrvyZfgc7krR9A_vJY0IPACLcBGAsYHQ/s16000/AmongUs-Hat-Final.jpg`,
+    price: 3,
   },
   {
     name: "Hats (plural)",
-    img: `https://wiki.teamfortress.com/w/images/thumb/f/f5/Towering_Pillar_of_Hats.png/250px-Towering_Pillar_of_Hats.png"`,
+    img: `https://wiki.teamfortress.com/w/images/thumb/f/f5/Towering_Pillar_of_Hats.png/250px-Towering_Pillar_of_Hats.png`,
   },
 ]);
 
-function test() {
-  div.value.textcontent = "";
+function test(x) {
+  console.log(x.name);
 }
-onMounted(() => {
-  test();
-});
 </script>
 
 <template>
@@ -29,11 +27,15 @@ onMounted(() => {
     <wowow>
       <template #title>{{ hat.name }}</template>
       <template #img>
-        {{ hat.img }}
+        <img v-bind:src="hat.img" />
+      </template>
+      <template #button>
+        <button @click="test(hat)">buy this item</button>
       </template>
     </wowow>
   </div>
-  <button @click="console.log(hats)">test</button>
+
+  <p>{{ amongus }}</p>
 </template>
 
 <style lang="scss" scoped>

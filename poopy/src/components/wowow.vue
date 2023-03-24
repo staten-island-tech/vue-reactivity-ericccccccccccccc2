@@ -4,7 +4,7 @@
     <slot name="img"></slot>
 
     <h4><slot name="price"></slot></h4>
-    <button>buy this item</button>
+    <slot name="button"></slot>
   </div>
 </template>
 

@@ -3,6 +3,8 @@ import { viewDepthKey } from "vue-router";
 import wowow from "../components/wowow.vue";
 import { ref, onMounted } from "vue";
 
+let cart = [];
+let cart_prices = [];
 const div = ref(null);
 let amongus = "wow";
 const hats = ref([
@@ -12,13 +14,15 @@ const hats = ref([
     price: 3,
   },
   {
-    name: "Hats (plural)",
+    name: "Hats (plural) - 5 buckx",
     img: `https://wiki.teamfortress.com/w/images/thumb/f/f5/Towering_Pillar_of_Hats.png/250px-Towering_Pillar_of_Hats.png`,
+    price: 5,
   },
 ]);
 
 function test(x) {
   console.log(x.name);
+  cart.push(x.price);
 }
 </script>
 

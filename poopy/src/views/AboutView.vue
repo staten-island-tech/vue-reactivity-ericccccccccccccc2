@@ -3,10 +3,20 @@ import { viewDepthKey } from "vue-router";
 import wowow from "../components/wowow.vue";
 import { ref, onMounted } from "vue";
 
-let cart = [];
-let cart_prices = [];
+let cart = ref([]);
+let cart_prices = ref([]);
 const div = ref(null);
 let amongus = "wow";
+let cart_total = ref(0);
+
+function cartValue(array) {
+  console.log(array);
+  cart_prices.value.push(array);
+  console.log(cart_prices.value);
+  let sum = ref(0);
+  cart_prices.value.forEach((element) => (sum.value += element));
+  cart_total.value = cart_total.value + sum.value;
+}
 const hats = ref([
   {
     name: "Amongus - 2bucks",
@@ -27,6 +37,7 @@ function test(x) {
 </script>
 
 <template>
+  <p>{{ cart_total }}</p>
   <div v-for="hat in hats" id="susdiv1">
     <wowow>
       <template #title>{{ hat.name }}</template>
@@ -34,7 +45,7 @@ function test(x) {
         <img v-bind:src="hat.img" />
       </template>
       <template #button>
-        <button @click="test(hat)">buy this item</button>
+        <button @click="cartValue(hat.price)">buy this item</button>
       </template>
     </wowow>
   </div>

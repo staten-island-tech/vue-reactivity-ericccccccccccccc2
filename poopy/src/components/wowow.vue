@@ -1,3 +1,5 @@
+<script></script>
+
 <template>
   <div>
     <h3><slot name="title"></slot></h3>

@@ -1,4 +1,7 @@
-<script></script>
+<script>
+import { ref, defineProps } from "vue";
+let wow = defineProps(true);
+</script>
 
 <template>
   <div>

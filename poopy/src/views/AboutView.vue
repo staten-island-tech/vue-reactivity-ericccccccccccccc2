@@ -1,9 +1,9 @@
 <script setup>
 import { viewDepthKey } from "vue-router";
 import wowow from "../components/wowow.vue";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, defineProps } from "vue";
 
-const wow = ref(true);
+const wow = defineProps(true);
 let cart = ref([]);
 let cart_prices = ref([]);
 const div = ref(null);
@@ -78,3 +78,5 @@ p {
   text-align: center;
 }
 </style>
+
+https://sfc.vuejs.org/#eNp9Uk1v2zAM/SuEMMApFlvLtpPhBN2A7jagwIDtUO+QOLSj1JYESU7nGf7vo/wRp2tTn8z3Hh8pki37onV0qpHFLLGZEdqBRVfrTSpFpZVx0ILBHDrIjaogIGlwpr6WqrhX1o1cxCfAO5IMIJWZkiTQBFpYe6vFgydaEPsYVktwwpUYQ/C9gaOqjcQGnoQ7wE9ygG45az/OWl+mELK4ovw0K38dGs+DsGAV5LUkZSp/36TysrNvSrof4i+ODa6ITvgwDZoDBQ4rXW4d+sgle3GC2LqmxHXKWsjH7Pi513sIsPLlGGUBfck0nSEEOIW5MmTh00DIYUgpm+j4EZuRjcT+Au8fNzF9MJO3KMutKTB0+MeNmrmlNXyIVpN4k5z31XeYcHoY/SX8/Fy2ZMOqw2qro6NVku6k7Rc7EtRvDD3iMVq7j1N2cE7bmHObZ/4WjjZSpuD0F5laOlFhhLYKd0Y9WTRknLJ+f6MHJ/CEJjQo92jQvOX5n/SFr7ellXf0lMvrfOXe95gLifdGabt4CPq5Bv5SBvyuEs7jl/Pt6auXQhP1l5KVW2tpEzuqHvp1zAdx+Lxp2+FWoesSTvHI7GrnlITbrBTZIyW/Qyq/eF78hozuBgA8kPAh6+oyu3+/5lNs

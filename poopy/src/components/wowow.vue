@@ -1,6 +1,5 @@
 <script>
 import { ref, defineProps } from "vue";
-let wow = defineProps(true);
 </script>
 
 <template>
@@ -9,7 +8,10 @@ let wow = defineProps(true);
     <slot name="img"></slot>
 
     <h4><slot name="price"></slot></h4>
-    <slot name="button"></slot>
+    <slot name="button">
+      <button @click="wowie2">buy this item</button>
+      <button @click="wowie">test</button>
+    </slot>
   </div>
 </template>
 

@@ -5,18 +5,19 @@ import { ref, onMounted, defineProps } from "vue";
 
 let cart = ref([]);
 let cart_prices = ref([]);
+let cart_prices_int = ref(0);
 let cart_prices_sub = ref([]);
-const div = ref(null);
-let amongus = "wow";
+let cart_prices_sub_int = ref(0);
 let cart_total = ref(0);
 
 function removeItem(array) {
   console.log(array);
   cart_prices_sub.value.push(array);
-  console.log(cart_prices.value);
   let sum = ref(0);
-  cart_prices.value.forEach((element) => (sum.value += element));
-  cart_prices_sub.value = sum.value;
+  cart_prices_sub.value.forEach((element) => (sum.value += element));
+  console.log(sum.value);
+  cart_prices_sub_int.value = sum.value;
+  cart_total.value = cart_prices_int.value - cart_prices_sub_int.value;
 }
 
 function cartValue(array) {
@@ -25,7 +26,8 @@ function cartValue(array) {
   console.log(cart_prices.value);
   let sum = ref(0);
   cart_prices.value.forEach((element) => (sum.value += element));
-  cart_total.value = sum.value;
+  cart_prices_int.value = sum.value;
+  cart_total.value = cart_prices_int.value - cart_prices_sub_int.value;
 }
 const hats = ref([
   {
@@ -64,20 +66,18 @@ function test(x) {
           buy this item
         </button>
         <button v-else @click="removeItem(hat.price), (hat.shown = !hat.shown)">
-          test
+          remove from cart
         </button>
       </template>
     </wowow>
   </div>
-
-  <p>{{ amongus }}</p>
 </template>
 
 <style lang="scss" scoped>
 div {
   display: flex;
   justify-content: center;
-  align-content: vertical;
+  align-content: horizontal;
   flex-wrap: wrap;
   margin: 20px;
 }

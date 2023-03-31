@@ -10,7 +10,7 @@ import { ref, defineProps } from "vue";
     <h4><slot name="price"></slot></h4>
     <slot name="button">
       <button @click="wowie2">buy this item</button>
-      <button @click="wowie">test</button>
+      <button @click="wowie">remove from cart</button>
     </slot>
   </div>
 </template>

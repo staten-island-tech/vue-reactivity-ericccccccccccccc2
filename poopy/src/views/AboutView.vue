@@ -10,8 +10,12 @@ let cart_prices_sub = ref([]);
 let cart_prices_sub_int = ref(0);
 let cart_total = ref(0);
 
+function addCart(array) {
+  cart.value.push(array)
+  console.log(cart)
+}
+
 function removeItem(array) {
-  console.log(array);
   cart_prices_sub.value.push(array);
   let sum = ref(0);
   cart_prices_sub.value.forEach((element) => (sum.value += element));
@@ -21,7 +25,6 @@ function removeItem(array) {
 }
 
 function cartValue(array) {
-  console.log(array);
   cart_prices.value.push(array);
   console.log(cart_prices.value);
   let sum = ref(0);
@@ -31,7 +34,7 @@ function cartValue(array) {
 }
 const hats = ref([
   {
-    name: "Amongus - 2bucks",
+    name: "Amongus - 3 bucks",
     img: `https://1.bp.blogspot.com/-C4pbViQnphU/YEXEf-4fQ6I/AAAAAAAAYA8/8cfFY-lITvwcrvyZfgc7krR9A_vJY0IPACLcBGAsYHQ/s16000/AmongUs-Hat-Final.jpg`,
     price: 3,
     shown: true,
@@ -61,7 +64,7 @@ function test(x) {
       <template #button>
         <button
           v-if="hat.shown"
-          @click="cartValue(hat.price), (hat.shown = !hat.shown)"
+          @click="cartValue(hat.price), (hat.shown = !hat.shown), addCart(hat)"
         >
           buy this item
         </button>
@@ -70,6 +73,10 @@ function test(x) {
         </button>
       </template>
     </wowow>
+  </div>
+  <div v-for="item in cart">
+    <p>test</p>
+    <p>{{ item.name }}</p>
   </div>
 </template>
 

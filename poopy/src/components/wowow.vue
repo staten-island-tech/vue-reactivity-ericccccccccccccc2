@@ -21,6 +21,5 @@ div {
   flex-direction: column;
   text-align: center;
 
-  align-content: vertical;
 }
 </style>

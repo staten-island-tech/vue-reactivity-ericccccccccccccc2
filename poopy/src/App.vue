@@ -3,7 +3,7 @@ import { RouterView } from "vue-router";
 </script>
 
 <template>
-  <div class="bigger_wrapper">
+
     <div class="title">
       <h1>Hat Shop</h1>
     </div>
@@ -16,7 +16,7 @@ import { RouterView } from "vue-router";
     </div>
 
     <RouterView />
-  </div>
+
 </template>
 
 <style lang="scss" scoped>
@@ -32,8 +32,5 @@ import { RouterView } from "vue-router";
 nav {
   font-size: 20px;
 }
-.bigger_wrapper {
-  height: 1080px;
-  width: 1920px;
-}
+
 </style>

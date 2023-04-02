@@ -10,9 +10,14 @@ let cart_prices_sub = ref([]);
 let cart_prices_sub_int = ref(0);
 let cart_total = ref(0);
 
+function removeCart(array) {
+  console.log(cart.value)
+  let target = cart.value.indexOf(array);
+  cart.value.splice(target, 1);
+}
+
 function addCart(array) {
   cart.value.push(array)
-  console.log(cart)
 }
 
 function removeItem(array) {
@@ -47,14 +52,14 @@ const hats = ref([
   },
 ]);
 
-function test(x) {
-  console.log(x.name);
-  cart.push(x.price);
-}
 </script>
 
 <template>
   <p>total cart value: {{ cart_total }}</p>
+  <div v-for="item in cart">
+    <p>{{ item.name }}</p>
+  </div>
+<div class="wrapper">
   <div v-for="hat in hats" id="susdiv1">
     <wowow>
       <template #title>{{ hat.name }}</template>
@@ -68,19 +73,22 @@ function test(x) {
         >
           buy this item
         </button>
-        <button v-else @click="removeItem(hat.price), (hat.shown = !hat.shown)">
+        <button v-else @click="removeItem(hat.price), (hat.shown = !hat.shown), removeCart(hat)">
           remove from cart
         </button>
       </template>
     </wowow>
   </div>
-  <div v-for="item in cart">
-    <p>test</p>
-    <p>{{ item.name }}</p>
-  </div>
+</div>
+
+
 </template>
 
 <style lang="scss" scoped>
+#susdiv1 {
+  width: 300px;
+}
+
 div {
   display: flex;
   justify-content: center;

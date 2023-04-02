@@ -27,10 +27,4 @@ h3 {
   text-align: center;
 }
 
-.images {
-  display: flex;
-  flex-wrap: wrap;
-  height: 1080px;
-  width: 1920px;
-}
 </style>
